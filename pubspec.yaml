@@ -41,6 +41,11 @@ dependencies:
   path_provider: ^2.0.14
   path: ^1.8.2
   image_picker: ^0.8.7+3
+  provider: ^6.0.5
+  image: ^4.0.15
+  sqflite: ^2.2.7
+  intl: ^0.18.1
+
 
 
 dev_dependencies:
