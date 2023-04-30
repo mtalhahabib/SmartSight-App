@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyp/provider/fyp_provider.dart';
 import 'package:fyp/provider/splash_provider.dart';
 import 'package:provider/provider.dart';
-import 'recents/home.dart';
+import 'homePage/home.dart';
 
 class MyLoadingScreen extends StatefulWidget {
   @override

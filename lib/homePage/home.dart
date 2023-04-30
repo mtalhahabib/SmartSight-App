@@ -1,13 +1,9 @@
 
-import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fyp/recents/imagePage.dart';
-import 'package:image_cropper/image_cropper.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
+import 'package:fyp/homePage/imagePage.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:io';
@@ -16,7 +12,6 @@ import 'package:path_provider/path_provider.dart';
 
 import '../provider/fyp_provider.dart';
 import 'bottom_sheets.dart';
-import 'cropPage.dart';
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
