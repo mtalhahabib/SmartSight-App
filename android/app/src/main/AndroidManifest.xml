@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fyp">
+          xmlns:tools="http://schemas.android.com/tools" package="com.example.fyp">
    <application
         android:label="fyp"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true">
+
+       <activity
+               android:name="com.yalantis.ucrop.UCropActivity"
+               android:screenOrientation="portrait"
+               android:theme="@style/Theme.AppCompat.Light.NoActionBar" tools:ignore="MissingClass"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,5 +36,6 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
     </application>
 </manifest>

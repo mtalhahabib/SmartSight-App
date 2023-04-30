@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/provider/fyp_provider.dart';
+import 'package:fyp/provider/splash_provider.dart';
 import 'package:fyp/splash.dart';
 import 'package:provider/provider.dart';
 
@@ -13,9 +14,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //return MaterialApp(home : MyPage());
 
-    return ChangeNotifierProvider(
-      create: (_) => FypProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider( create: (_) => SplashProvider()),
+        ChangeNotifierProvider(create:  (_) => FypProvider())
+      ],
+
       child: MaterialApp(
 
         debugShowCheckedModeBanner: false,

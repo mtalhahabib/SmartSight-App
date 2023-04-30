@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyp/provider/fyp_provider.dart';
+import 'package:fyp/provider/splash_provider.dart';
 import 'package:provider/provider.dart';
 import 'recents/home.dart';
 
@@ -17,8 +18,9 @@ class _MyLoadingScreenState extends State<MyLoadingScreen> {
   @override
   void initState() {
     super.initState();
-    final fypProvider = Provider.of<FypProvider>(context,listen: false);
-    fypProvider.startLoadingAnimation();
+
+    final splashProvider = Provider.of<SplashProvider>(context,listen: false);
+    splashProvider.startLoadingAnimation();
     homeScreen();
   }
 
@@ -35,9 +37,7 @@ class _MyLoadingScreenState extends State<MyLoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('halla');
-    final fypProvider = Provider.of<FypProvider>(context,listen: false);
-
+    print('number');
     final textWidth = MediaQuery
         .of(context)
         .size
@@ -52,8 +52,8 @@ class _MyLoadingScreenState extends State<MyLoadingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
 
-      Consumer<FypProvider>(builder: (context,value,child){
-        return AnimatedOpacity(opacity: fypProvider.showWidget ? 1.0 : 0.0,
+      Consumer<SplashProvider>(builder: (context,value,child){
+        return AnimatedOpacity(opacity: value.showWidget ? 1.0 : 0.0,
           duration: Duration(seconds: 3),
           child: SvgPicture.asset('assets/Vector.svg'),);
       },
@@ -79,9 +79,9 @@ class _MyLoadingScreenState extends State<MyLoadingScreen> {
                       left: 0,
                       top: 0,
                       bottom: 0,
-                      child: Consumer<FypProvider>(builder: (context,value,child){
+                      child: Consumer<SplashProvider>(builder: (context,value,child){
                         return Container(
-                          width: fypProvider.progressValue * textWidth,
+                          width: value.progressValue * textWidth,
                           decoration: BoxDecoration(
                             color: Colors.green, // set color of progress bar
                             borderRadius: BorderRadius.circular(

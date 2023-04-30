@@ -122,6 +122,7 @@ Padding(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Image Processed'),
+                    Icon(Icons.done,color: Colors.white,)
 
                   ],
                 ),
