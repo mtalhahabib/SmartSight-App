@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-import 'package:path/path.dart';
 
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -35,7 +34,7 @@ class FypProvider with ChangeNotifier{
 
   Future<void> loadImagesFromDatabase() async {
     List<Map<String, dynamic>> images =
-    await _database!.rawQuery("SELECT * FROM images ");   // ORDER BY id DESC
+    await _database!.rawQuery("SELECT * FROM images ORDER BY id DESC ");  //ORDER BY id DESC
 
       imageslist = images;
     notifyListeners();
@@ -46,8 +45,10 @@ class FypProvider with ChangeNotifier{
         .rawQuery("SELECT COUNT(*) FROM images")
         .then((value) => Sqflite.firstIntValue(value)!);
 
-    if (imageCount >= 5) {
+    if (imageCount >= 10) {
       await _database!.rawDelete("DELETE FROM images WHERE id = 1");
+      await _database!.execute("UPDATE images SET id = id - 1");
+      notifyListeners();
     }
 
     String name = "NewFile ${DateFormat('yy-MM-dd HH:mm:ss').format(DateTime.now())}";
@@ -64,7 +65,7 @@ class FypProvider with ChangeNotifier{
       ImageCache cache =ImageCache();
          cache.clear();
 
-      final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera,imageQuality: 100);
+      final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery,imageQuality: 100);
 
 
       if (pickedFile != null) {
@@ -84,7 +85,7 @@ class FypProvider with ChangeNotifier{
         sourcePath: imageFile!.path,
 
         cropStyle: CropStyle.rectangle,
-        compressQuality: 60,
+        compressQuality: 40,
         aspectRatioPresets: [
           CropAspectRatioPreset.original,
           CropAspectRatioPreset.ratio3x2,

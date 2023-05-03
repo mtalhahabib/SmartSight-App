@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.5
 
   flutter_svg: ^2.0.5
-  camera: ^0.10.4
   path_provider: ^2.0.14
   path: ^1.8.2
   image_picker: ^0.8.7+3
@@ -47,6 +46,8 @@ dependencies:
   intl: ^0.18.1
   image_crop: ^0.4.1
   image_cropper: ^3.0.3
+  firebase_storage: ^11.1.1
+  cloud_firestore: ^4.5.3
 
 
 

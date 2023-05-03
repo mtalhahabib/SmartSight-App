@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bottom_sheets.dart';
+
 class ImagePage extends StatefulWidget {
   final String _imagePath;
   final String name;
@@ -15,6 +17,41 @@ class ImagePage extends StatefulWidget {
 }
 
 class _ImagePageState extends State<ImagePage> {
+  bool processed=true;
+  // --------------------------------------------  BottomPages
+  void openlabel() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) => Container(
+          height: MediaQuery.of(context).size.height * 0.8,
+          child: labelPage()
+      ),
+    );
+  }
+
+  void open3D() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) => Container(
+          height: MediaQuery.of(context).size.height * 0.8,
+          child: modelPage()
+      ),
+    );
+  }
+
+  void openAnimation() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) => Container(
+          height: MediaQuery.of(context).size.height * 0.8,
+          child: AnimationPage()
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +59,7 @@ class _ImagePageState extends State<ImagePage> {
         appBar: AppBar(
         backgroundColor: Colors.black87,
         elevation: 0,
-        centerTitle: true,
+        centerTitle: processed? true : false,
         title: Text(widget.name,style: TextStyle(
         fontWeight: FontWeight.normal,
         fontSize: 15,
@@ -45,12 +82,13 @@ class _ImagePageState extends State<ImagePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.file(File(widget._imagePath)),
+          processed ? Image.file(File(widget._imagePath)):
+          Image.asset('assets/engin.jpeg'),
         ],
       ),
     ),
 
-      bottomNavigationBar: Container(
+      bottomNavigationBar: processed ? Container(
 
         decoration: BoxDecoration(
           border: Border(
@@ -139,10 +177,110 @@ Padding(
               ),
             );
           });
+          Future.delayed(Duration(seconds: 6),(){
+            setState(() {
+              processed=false;
+            });
+          } );
       //
       }, icon: Icon(Icons.done),color: Colors.white,)),
 )
 
+            ],
+          ),
+        ),
+      ) :
+      Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.green,
+              width: 2.0,
+            ),
+          ),
+        ),
+        child: BottomAppBar(
+          color: Colors.black87,
+          child: Row(
+
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+
+              TextButton.icon(
+                onPressed: () => openlabel(),
+                icon: Column(
+
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(height:2 ,),
+                    ImageIcon(
+
+                      AssetImage('assets/labels.png'),
+                      color: Colors.white,
+
+                    ),
+                    SizedBox(height: 3,),
+                    Text(
+                      'Labels',
+                      style: TextStyle(color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12),
+                    ),
+
+                  ],
+                ),
+                label: SizedBox.shrink(),
+              ),
+              TextButton.icon(
+                onPressed: () => open3D(),
+                icon: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(height:2 ,),
+                    Icon(
+                      CupertinoIcons.cube_fill,
+                      color: Colors.white,
+                    ),
+                    SizedBox(height: 3,),
+                    Text(
+                      '3D Models',
+                      style: TextStyle(color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12
+                      ),
+                    ),
+                  ],
+                ),
+                label: SizedBox.shrink(),
+              ),
+              TextButton.icon(
+                onPressed: () =>openAnimation(),
+
+                icon: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(height:2 ,),
+                    ImageIcon(
+
+                      AssetImage('assets/Vector.png'),
+                      color: Colors.white,
+
+                    ),
+                    SizedBox(height: 3,),
+                    Text(
+                      'Animations',
+                      style: TextStyle(color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12),
+
+                    ),
+                  ],
+                ),
+                label: SizedBox.shrink(),
+              ),
             ],
           ),
         ),

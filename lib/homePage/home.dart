@@ -18,12 +18,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+late FypProvider fypProvider;
  Database? _database;
   //List<Map<String, dynamic>> imageslist = [];
 
   //CroppedFile? imageFile;
 
+bool check =false;
 
   @override
   void initState() {
@@ -34,6 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
     final fypProvider = Provider.of<FypProvider>(context,listen: false);
     fypProvider.loadImagesFromDatabase();
      fypProvider.initDatabase();
+  }
+
+  @override
+  void dispose(){
+    fypProvider.dispose();
+    super.dispose();
   }
 
   Future<void> deleteTable() async {
@@ -187,8 +194,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final fypProvider = Provider.of<FypProvider>(context,listen: false);
-
+//    final fypProvider = Provider.of<FypProvider>(context,listen: false);
+// never use provider.of inside the build function
 
     return Scaffold(
       appBar: AppBar(
@@ -297,7 +304,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   );
                 }
-                ),
+                )
+
 
             ),
           ],
@@ -308,7 +316,8 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Colors.green,
           child: Icon(Icons.camera_alt),
           onPressed: (){
-              fypProvider.pickImageFromCamera(context);
+            context.read<FypProvider>().pickImageFromCamera(context);
+
           },
         )
   ,
