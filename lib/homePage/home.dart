@@ -204,6 +204,7 @@ bool check =false;
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+           SizedBox(width: 40,),
 
             SvgPicture.asset(
               'assets/Vector.svg',

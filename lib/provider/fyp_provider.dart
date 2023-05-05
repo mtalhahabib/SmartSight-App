@@ -65,7 +65,7 @@ class FypProvider with ChangeNotifier{
       ImageCache cache =ImageCache();
          cache.clear();
 
-      final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery,imageQuality: 100);
+      final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery,imageQuality: 20,);
 
 
       if (pickedFile != null) {
@@ -86,6 +86,7 @@ class FypProvider with ChangeNotifier{
 
         cropStyle: CropStyle.rectangle,
         compressQuality: 40,
+
         aspectRatioPresets: [
           CropAspectRatioPreset.original,
           CropAspectRatioPreset.ratio3x2,
