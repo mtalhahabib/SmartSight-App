@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fyp/bottomSheets/animationPage.dart';
 import 'package:image_cropper/image_cropper.dart';
 
-import 'bottom_sheets.dart';
+import '../bottomSheets/labelPage.dart';
+import '../bottomSheets/modelPage.dart';
 
 class CroppedImg extends StatefulWidget {
 

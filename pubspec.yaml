@@ -48,10 +48,14 @@ dependencies:
   image_cropper: ^3.0.3
   firebase_storage: ^11.1.1
   cloud_firestore: ^4.5.3
-  amplify_flutter: ^1.0.1
-  amplify_storage_s3: ^1.0.1
-  aws_s3: ^0.1.1+hotfix.5
-  amazon_cognito_identity_dart_2: ^3.3.0
+  video_player: ^2.6.1
+  firebase_core: ^2.12.0
+
+  cached_network_image: ^3.2.3
+  video_thumbnail: ^0.5.3
+  http: ^0.13.6
+  babylonjs_viewer: ^1.2.1
+  badges: ^3.1.1
 
 
 dev_dependencies:
@@ -84,6 +88,18 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+     - assets/image_thumbnail/AirCoolant.png
+     - assets/image_thumbnail/AirFilter.JPG
+     - assets/image_thumbnail/Battery.png
+     - assets/image_thumbnail/MainEngine.png
+     - assets/image_thumbnail/Radiator.png
+     - assets/image_thumbnail/Compressor.jpg
+     - assets/glb/MainEngine.glb
+     - assets/glb/AirCoolant.glb
+     - assets/glb/Battery.glb
+     - assets/glb/Compressor.glb
+     - assets/glb/Radiator.glb
+     - assets/glb/AirFilter.glb
      - assets/Vector.svg
      - assets/file.png
      - assets/labels.png

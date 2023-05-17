@@ -1,5 +1,6 @@
 
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,8 +11,10 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 
 
+import '../bottomSheets/animationPage.dart';
+import '../bottomSheets/modelPage.dart';
 import '../provider/fyp_provider.dart';
-import 'bottom_sheets.dart';
+import '../bottomSheets/labelPage.dart';
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -35,9 +38,11 @@ bool check =false;
     final fypProvider = Provider.of<FypProvider>(context,listen: false);
     fypProvider.loadImagesFromDatabase();
      fypProvider.initDatabase();
+
   }
 
   @override
+
   void dispose(){
     fypProvider.dispose();
     super.dispose();
@@ -371,9 +376,13 @@ bool check =false;
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    Icon(
-                      CupertinoIcons.cube_fill,
-                      color: Colors.white,
+                    Badge(
+                      
+                      child: Icon(
+                        CupertinoIcons.cube_fill,
+                        color: Colors.white,
+                      ),
+                      
                     ),
                     SizedBox(height: 3,),
                     Text(
@@ -395,11 +404,13 @@ bool check =false;
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    ImageIcon(
+                    Badge(
+                      child: ImageIcon(
 
-                    AssetImage('assets/Vector.png'),
-                      color: Colors.white,
+                      AssetImage('assets/Vector.png'),
+                        color: Colors.white,
 
+                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(

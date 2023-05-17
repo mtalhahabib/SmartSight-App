@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'bottom_sheets.dart';
+import '../bottomSheets/animationPage.dart';
+import '../bottomSheets/labelPage.dart';
+import '../bottomSheets/modelPage.dart';
 
 class ImagePage extends StatefulWidget {
   final String _imagePath;
