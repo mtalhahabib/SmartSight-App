@@ -1,4 +1,4 @@
-# fyp
+# SmartSight
 
 A new Flutter project.
 
