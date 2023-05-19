@@ -28,10 +28,10 @@ print(check_model);
   }
 
  final List<String> objUrls = [
-   // 'assets/glb/AirCoolant.glb',
-   // 'assets/glb/AirFilter.glb',
-   // 'assets/glb/Battery.glb',
-   // 'assets/glb/Radiator.glb',
+   'assets/glb/AirCoolant.glb',
+   'assets/glb/AirFilter.glb',
+   'assets/glb/Battery.glb',
+   'assets/glb/Radiator.glb',
   ];
   final List<String> objThumbnails=[
     'AirCoolant',
