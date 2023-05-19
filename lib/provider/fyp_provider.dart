@@ -65,7 +65,7 @@ class FypProvider with ChangeNotifier{
       ImageCache cache =ImageCache();
          cache.clear();
 
-      final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery,imageQuality: 20,);
+      final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera,imageQuality: 20,);
 
 
       if (pickedFile != null) {

@@ -320,7 +320,7 @@ bool check =false;
       ),
       floatingActionButton:FloatingActionButton(
           backgroundColor: Colors.green,
-          child: Icon(Icons.image_outlined),
+          child: Icon(Icons.camera_alt),
           onPressed: (){
             context.read<FypProvider>().pickImageFromCamera(context);
 
