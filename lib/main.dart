@@ -5,6 +5,8 @@ import 'package:fyp/provider/splash_provider.dart';
 import 'package:fyp/splash.dart';
 import 'package:provider/provider.dart';
 
+import 'bottomSheets/modelPage.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

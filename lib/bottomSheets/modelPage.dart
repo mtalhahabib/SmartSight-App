@@ -2,40 +2,54 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:babylonjs_viewer/babylonjs_viewer.dart';
 
+import '../homePage/cropPage.dart';
+
 class modelPage extends StatefulWidget {
   @override
   State<modelPage> createState() => _modelPageState();
 }
 
 class _modelPageState extends State<modelPage> {
+  bool check_model=false;
+
+  @override
+  void initState() {
+
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      if( objUrls.isEmpty){
+        check_model=true;
+      }
+
+    });
+
+print(check_model);
+  }
+
  final List<String> objUrls = [
-   'assets/glb/AirCoolant.glb',
-   'assets/glb/AirFilter.glb',
-   'assets/glb/Compressor.glb',
-   'assets/glb/Battery.glb',
-   'assets/glb/Radiator.glb',
-   'assets/glb/MainEngine.glb',
+   // 'assets/glb/AirCoolant.glb',
+   // 'assets/glb/AirFilter.glb',
+   // 'assets/glb/Battery.glb',
+   // 'assets/glb/Radiator.glb',
   ];
   final List<String> objThumbnails=[
     'AirCoolant',
     'AirFilter',
-    'Compressor',
+
     'Battery',
     'Radiator',
-    'MainEngine',
   ];
   final List<String> images=[
     'assets/image_thumbnail/AirCoolant.png',
      'assets/image_thumbnail/AirFilter.JPG',
-    'assets/image_thumbnail/Compressor.jpg',
          'assets/image_thumbnail/Battery.png',
     'assets/image_thumbnail/Radiator.png',
-         'assets/image_thumbnail/MainEngine.png'
-
 
   ];
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -49,7 +63,9 @@ class _modelPageState extends State<modelPage> {
         backgroundColor: Colors.black,
         elevation: 0,
       ),
-      body: Container(
+      body:
+
+      Container(
         color: Colors.black,
         child: Center(
           child:GridView.builder(
@@ -110,3 +126,14 @@ elevation: 5,
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+

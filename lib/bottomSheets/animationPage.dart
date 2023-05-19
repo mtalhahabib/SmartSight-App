@@ -12,6 +12,8 @@ class AnimationPage extends StatefulWidget {
 }
 
 class _AnimationPageState extends State<AnimationPage> {
+  bool check_animy=true;
+
   List<String> videoUrls = [
     'https://firebasestorage.googleapis.com/v0/b/fyproject-6e649.appspot.com/o/Animations%2FAirCoolant.mp4?alt=media',
     'https://firebasestorage.googleapis.com/v0/b/fyproject-6e649.appspot.com/o/Animations%2FAirFilter.mp4?alt=media'  ,
@@ -24,6 +26,11 @@ class _AnimationPageState extends State<AnimationPage> {
   @override
   void initState() {
     super.initState();
+    setState(() {
+      if( videoUrls.length==0){
+        check_animy=false;
+      }
+    });
     // Load the thumbnails for all videos
     for (String videoUrl in videoUrls) {
       videoThumbnails.add(VideoThumbnail.thumbnailData(

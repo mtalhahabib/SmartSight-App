@@ -7,8 +7,10 @@ import 'package:image_cropper/image_cropper.dart';
 
 import '../bottomSheets/labelPage.dart';
 import '../bottomSheets/modelPage.dart';
+import '../bottomSheets/modelPage.dart';
 
 class CroppedImg extends StatefulWidget {
+
 
   final CroppedFile? imagefile;
   const CroppedImg(this.imagefile);
@@ -246,9 +248,12 @@ class _CroppedImgState extends State<CroppedImg> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    Icon(
-                      CupertinoIcons.cube_fill,
-                      color: Colors.white,
+
+                    Badge(
+                      child: Icon(
+                        CupertinoIcons.cube_fill,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(
@@ -270,11 +275,13 @@ class _CroppedImgState extends State<CroppedImg> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    ImageIcon(
+                    Badge(
+                      child: ImageIcon(
 
-                      AssetImage('assets/Vector.png'),
-                      color: Colors.white,
+                        AssetImage('assets/Vector.png'),
+                        color: Colors.white,
 
+                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(

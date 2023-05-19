@@ -28,10 +28,10 @@ late FypProvider fypProvider;
   //CroppedFile? imageFile;
 
 bool check =false;
-
   @override
   void initState() {
     super.initState();
+
      // final fypProvider = Provider.of<FypProvider>(context,listen: false);
      // deleteTable();  // By invoking this message all the data will be deleted when app will be restarted
 
@@ -320,7 +320,7 @@ bool check =false;
       ),
       floatingActionButton:FloatingActionButton(
           backgroundColor: Colors.green,
-          child: Icon(Icons.camera_alt),
+          child: Icon(Icons.image_outlined),
           onPressed: (){
             context.read<FypProvider>().pickImageFromCamera(context);
 
@@ -376,13 +376,9 @@ bool check =false;
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    Badge(
-                      
-                      child: Icon(
-                        CupertinoIcons.cube_fill,
-                        color: Colors.white,
-                      ),
-                      
+                    Icon(
+                      CupertinoIcons.cube_fill,
+                      color: Colors.white,
                     ),
                     SizedBox(height: 3,),
                     Text(
@@ -404,13 +400,11 @@ bool check =false;
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    Badge(
-                      child: ImageIcon(
+                    ImageIcon(
 
-                      AssetImage('assets/Vector.png'),
-                        color: Colors.white,
+                    AssetImage('assets/Vector.png'),
+                      color: Colors.white,
 
-                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(

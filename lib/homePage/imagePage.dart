@@ -241,9 +241,11 @@ Padding(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    Icon(
-                      CupertinoIcons.cube_fill,
-                      color: Colors.white,
+                    Badge(
+                      child: Icon(
+                        CupertinoIcons.cube_fill,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(
@@ -265,11 +267,13 @@ Padding(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(height:2 ,),
-                    ImageIcon(
+                    Badge(
+                      child: ImageIcon(
 
-                      AssetImage('assets/Vector.png'),
-                      color: Colors.white,
+                        AssetImage('assets/Vector.png'),
+                        color: Colors.white,
 
+                      ),
                     ),
                     SizedBox(height: 3,),
                     Text(
