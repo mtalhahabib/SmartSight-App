@@ -1,16 +1,9 @@
 # SmartSight
 
-A new Flutter project.
+This Flutter App takes a picture from camera and then sends it for processing through a Machine Leanrning model. Here my job was to make the front end of app. Second job of app is to display the 3D models and Animations. Files are fetched from firebase and shown in app. 3rd party packeges are used to display the 3D models in this flutter App.
 
-## Getting Started
+![1](https://github.com/mtalhahabib/SmartSight-App/assets/96326069/95e51560-5349-4cc2-a53b-d5c32430e4c0)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![2](https://github.com/mtalhahabib/SmartSight-App/assets/96326069/dc43ca95-7417-4a5d-9c55-fc3a30db366b)
